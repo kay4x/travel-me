@@ -1,0 +1,33 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "jquery": true,
+        "commonjs": true,
+        "es6": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:import/errors",
+       "plugin:import/warnings"
+    ],
+    "parserOptions": {
+        "sourceType": "module"
+    },
+    "rules": {
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "no-console": 1,
+        "no-unused-vars": 1
+    }
+}
