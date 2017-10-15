@@ -1,0 +1,37 @@
+{
+  "name": "travel-me",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kay4x/travel-me.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kay4x/travel-me/issues"
+  },
+  "homepage": "https://github.com/kay4x/travel-me#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.1.5",
+    "browser-sync": "^2.18.13",
+    "eslint": "^4.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "gulp": "^3.9.1",
+    "gulp-postcss": "^7.0.0",
+    "gulp-watch": "^4.3.11",
+    "postcss-hexrgba": "^1.0.0",
+    "postcss-import": "^11.0.0",
+    "postcss-mixins": "^6.1.1",
+    "postcss-nested": "^2.1.2",
+    "postcss-simple-vars": "^4.1.0"
+  },
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "normalize.css": "^7.0.0"
+  }
+}
