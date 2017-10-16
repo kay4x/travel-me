@@ -18,6 +18,14 @@
    margin-right: -65px;
  }
 
+ &--gutters-small > div {
+   padding-right: 45px;
+ }
+
+ &--gutters-small  {
+   margin-right: -45px;
+ }
+
 
 
  &__b-margin-until-medium {
@@ -89,6 +97,16 @@
     width: 66.66%;
   }
 }
+
+ &--change-display-at-medium  {
+   float: none;
+   display: flex;
+   flex-flow: row wrap;
+
+   & > div {
+     display: flex;
+   }
+ }
 
   @mixin clearFix;
 }
