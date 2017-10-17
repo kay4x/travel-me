@@ -1,0 +1,53 @@
+.primary-nav {
+  padding-top: 10px;
+
+  @mixin atMedium {
+    padding-top: 0;
+  }
+
+  &__pull-right {
+    @mixin atMedium {
+      float: right;
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    @mixin clearFix;
+  }
+
+  li {
+    display: inline-block;
+    list-style: none;
+    padding-top: 14px;
+
+    @mixin atMedium {
+      float: left;
+      display: block;
+    }
+
+  }
+
+  li:last-child {
+    padding-right: 0;
+
+    @mixin atMedium {
+      padding-right: 20px;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    background-color: rgba($mainBlue, .30);
+    padding: 12px;
+    color: $mainWhite;
+    font-weight: 300;
+
+    @mixin atMedium {
+     background-color: transparent;
+     padding: 0 12px 0 0;
+    }
+
+  }
+}

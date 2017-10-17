@@ -10,8 +10,14 @@
     position: absolute;
     text-align: center;
     transform: translateY(-50%);
+    padding-top: 88px;
     width: 100%;
     top: 50%;
+
+  @mixin atMedium {
+    padding-top: 60px;
+  }
+
   }
   &__title {
     font-weight: 300;

@@ -1,0 +1,128 @@
+.site-header {
+  position: absolute;
+  transition: all .3s ease-out;
+  padding: 10px;
+  width: 100%;
+  z-index: 2;
+
+  &--is-expanded {
+    background-color: rgba($mainBlue, .55);
+  }
+   @mixin atMedium {
+     background: rgba($mainBlue, .5);
+   }
+
+  &__logo {
+    position: absolute;
+    background-color: $mainBlue;
+    transform: translateX(-50%) scale(.8);
+    transform-origin: 50% 0;
+    padding: 25px 36px;
+    left: 50%;
+
+    top: 0;
+
+    @mixin atMedium {
+      left: auto;
+      transform: translateX(0);
+    }
+  }
+
+  &__logo__graphic {
+    text-indent: -9999px;
+  }
+
+  &__btn-container {
+
+
+    @mixin atMedium {
+      float: right;
+    }
+  }
+
+  &__menu-icon {
+    z-index: 10;
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    right: 10px;
+    top: 10px;
+
+    &::before {
+      content: "";
+      transition: transform .3s ease-out;
+      transform-origin: 0 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: $mainWhite;
+    }
+
+    &__middle {
+     transition: all .3s ease-out;
+     background-color: $mainWhite;
+     position: absolute;
+     width: 20px;
+     height: 3px;
+     top: 8px;
+     left: 0;
+    }
+
+    &::after {
+      transition: transform .3s ease-out;
+      transform-origin: 0 100%;
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 20px;
+      height: 3px;
+      background-color: $mainWhite;
+    }
+
+
+    @mixin atMedium {
+      display: none;
+    }
+  }
+
+  &__menu-icon--close-x {
+    &::before {
+      transform: rotate(45deg) scaleX(1.25);
+    }
+    .site-header__menu-icon__middle {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    &::after {
+      transform: rotate(-45deg) scaleX(1.25) translateY(1px);
+    }
+  }
+
+
+  &__menu-content {
+    transform: scale(1.2);
+     transition: all .3s ease-out;
+     padding-top: 100px;
+     position: relative;
+     text-align: center;
+     z-index: -10;
+     opacity: 0;
+     width: 100%;
+
+     @mixin atMedium {
+       transform: scale(1);
+       opacity: 1;
+       z-index: 1;
+       padding-top: 0;
+     }
+
+     &--is-visible {
+       transform: scale(1);
+       opacity: 1;
+       z-index: 1;
+     }
+  }
+}

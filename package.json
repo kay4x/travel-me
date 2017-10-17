@@ -18,7 +18,11 @@
   "homepage": "https://github.com/kay4x/travel-me#readme",
   "devDependencies": {
     "autoprefixer": "^7.1.5",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
     "browser-sync": "^2.18.13",
+    "chalk": "^2.1.0",
     "del": "^3.0.0",
     "eslint": "^4.9.0",
     "eslint-plugin-import": "^2.7.0",
@@ -31,7 +35,9 @@
     "postcss-import": "^11.0.0",
     "postcss-mixins": "^6.1.1",
     "postcss-nested": "^2.1.2",
-    "postcss-simple-vars": "^4.1.0"
+    "postcss-simple-vars": "^4.1.0",
+    "webpack": "^3.8.0",
+    "webpack-stream": "^4.0.0"
   },
   "dependencies": {
     "jquery": "^3.2.1",
