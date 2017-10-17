@@ -1,0 +1,17 @@
+.reveal-item {
+   opacity: 1;
+  @mixin atSmall {
+    transition: all 1.3s ease-out;
+    transform: scale(1.2);
+    opacity: 0;
+  }
+
+
+  &--is-visible {
+    @mixin atSmall {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+  }
+}
