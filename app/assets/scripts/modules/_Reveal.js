@@ -22,7 +22,7 @@ class RevealOnScroll {
       const offset = this.offsetPercent;
       this.itemsToReveal.each(function(){
         const currentItem = this;
-        new Waypoint({ 
+        new Waypoint({
           element:  currentItem,
           handler() {
             $(currentItem).addClass("reveal-item--is-visible");
