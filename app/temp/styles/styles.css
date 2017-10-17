@@ -1309,3 +1309,28 @@ a {
 
   }
   }
+
+.reveal-item {
+   opacity: 1;
+}
+
+@media (min-width: 530px) {
+
+.reveal-item {
+    -webkit-transition: all 1.3s ease-out;
+    transition: all 1.3s ease-out;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    opacity: 0
+}
+  }
+
+@media (min-width: 530px) {
+
+.reveal-item--is-visible {
+      opacity: 1;
+      -webkit-transform: scale(1);
+              transform: scale(1)
+
+  }
+  }
