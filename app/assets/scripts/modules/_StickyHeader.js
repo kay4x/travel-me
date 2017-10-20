@@ -6,6 +6,7 @@ import smoothScroll from "jquery-smooth-scroll";
 
 class StickyHeader {
      constructor(options) {
+       this.lazyImages =  options.lazyImages;
        this.siteHeader = options.siteHeader;
        this.triggerElement = options.triggerElement;
        this.primaryNavLink = options.primaryNavLink;
@@ -15,6 +16,15 @@ class StickyHeader {
       this.createHeaderWaypoints();
       this.createPageSectionWaypoints();
       this.headerLinks.smoothScroll();
+      this.refreshWaypoint();
+     }
+
+     refreshWaypoint() {
+       // This will re-calculate the vertical positioning of
+       // all the section making use of waypoints after the images
+       // are lazy loaded
+       this.lazyImages.on("load", refreshSection);
+       const refreshSection = () => waypoint.refreshAll();
      }
 
     createHeaderWaypoints() {

@@ -11136,9 +11136,10 @@ var testimonialSection = new _Reveal2.default({
 });
 
 //This change the color header on scroll and create a scroll spy
-var siteHeader = new _StickyHeader2.default({
-    siteHeader: (0, _jquery2.default)(".site-header"),
+var stickyHeader = new _StickyHeader2.default({
+    lazyImages: (0, _jquery2.default)(".lazyload"),
     triggerElement: (0, _jquery2.default)(".large-hero__title"),
+    siteHeader: (0, _jquery2.default)(".site-header"),
     pageSections: (0, _jquery2.default)(".page-section"),
     headerLinks: (0, _jquery2.default)(".primary-nav a")
 });
@@ -11297,6 +11298,7 @@ var StickyHeader = function () {
   function StickyHeader(options) {
     _classCallCheck(this, StickyHeader);
 
+    this.lazyImages = options.lazyImages;
     this.siteHeader = options.siteHeader;
     this.triggerElement = options.triggerElement;
     this.primaryNavLink = options.primaryNavLink;
@@ -11306,9 +11308,21 @@ var StickyHeader = function () {
     this.createHeaderWaypoints();
     this.createPageSectionWaypoints();
     this.headerLinks.smoothScroll();
+    this.refreshWaypoint();
   }
 
   _createClass(StickyHeader, [{
+    key: "refreshWaypoint",
+    value: function refreshWaypoint() {
+      // This will re-calculate the vertical positioning of
+      // all the section making use of waypoints after the images
+      // are lazy loaded
+      this.lazyImages.on("load", refreshSection);
+      var refreshSection = function refreshSection() {
+        return _noframework2.default.refreshAll();
+      };
+    }
+  }, {
     key: "createHeaderWaypoints",
     value: function createHeaderWaypoints() {
       var that = this;

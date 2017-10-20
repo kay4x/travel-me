@@ -28,9 +28,10 @@ const testimonialSection = new Reveal({
 });
 
 //This change the color header on scroll and create a scroll spy
-const siteHeader = new StickyHeader({
-     siteHeader: $(".site-header"),
+const stickyHeader = new StickyHeader({
+     lazyImages: $(".lazyload"),
      triggerElement: $(".large-hero__title"),
+     siteHeader: $(".site-header"),
      pageSections: $(".page-section"),
      headerLinks: $(".primary-nav a")
 });
