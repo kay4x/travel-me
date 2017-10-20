@@ -612,6 +612,10 @@ a {
   }
   }
 
+.wrapper--narrow {
+    max-width: 470px;
+  }
+
 .page-section {
   padding: 1.2rem 0;
 }
@@ -878,6 +882,10 @@ a {
 
 .section-title--blue {
       color: #2f5572;
+    }
+
+.section-title--less-margin {
+      margin-bottom: 0;
     }
 
 .feature-item {
@@ -1346,4 +1354,93 @@ a {
               transform: scale(1)
 
   }
+  }
+
+.modal {
+   -webkit-transition: all .3s ease-out;
+   transition: all .3s ease-out;
+   background: rgba(255,255,255, .94);
+   -webkit-transform: scale(1.2);
+           transform: scale(1.2);
+   visibility: hidden;
+   position: fixed;
+   z-index: 5;
+   opacity: 0;
+   right: 0;
+   left: 0;
+   bottom: 0;
+   top: 0;
+}
+
+.modal--is-visible {
+     -webkit-transform: scale(1);
+             transform: scale(1);
+     visibility: visible;
+     opacity: 1;
+
+   }
+
+.modal__inner {
+     position: absolute;
+     -webkit-transform: translateY(-50%);
+             transform: translateY(-50%);
+     width: 100%;
+     top: 50%;
+   }
+
+.modal__description {
+     margin-top: 0;
+     text-align: center;
+     font-size: 1.3rem;
+     font-weight: 300;
+     line-height: 1.65;
+   }
+
+.modal__close {
+     position: absolute;
+     top: 15px;
+     right: 15px;
+     font-weight:  400;
+     font-size: 2rem;
+     -webkit-transform: scaleX(1.2);
+             transform: scaleX(1.2);
+     -webkit-transform-origin: 100% 0;
+             transform-origin: 100% 0;
+     color: #2f5572;
+   }
+
+.modal__close:hover {
+       color: #d59541;
+       cursor: pointer;
+     }
+
+.social-icons {
+  text-align: center;
+}
+
+.social-icons__icons {
+    position: relative;
+     background-color: #d59541;
+     display: inline-block;
+     margin: 0 5px 5px 5px;
+     width: 33%;
+     height: 72px;
+  }
+
+@media (min-width: 530px) {
+
+.social-icons__icons {
+       width: 72px;
+       height: 72px;
+        margin: 0 5px
+  }
+  }
+
+.social-icons .icon {
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
   }

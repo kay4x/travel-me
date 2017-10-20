@@ -11105,36 +11105,50 @@ var _StickyHeader = __webpack_require__(5);
 
 var _StickyHeader2 = _interopRequireDefault(_StickyHeader);
 
+var _Modal = __webpack_require__(7);
+
+var _Modal2 = _interopRequireDefault(_Modal);
+
 var _jquery = __webpack_require__(0);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-/* eslint-disable no-unused-vars */
+// This hides the header links on small screen and opents them
 var mobileMenu = new _MobileMenu2.default({
-     menuContent: (0, _jquery2.default)(".site-header__menu-content"),
-     menuIcon: (0, _jquery2.default)(".site-header__menu-icon"),
-     siteHeader: (0, _jquery2.default)(".site-header")
+    menuContent: (0, _jquery2.default)(".site-header__menu-content"),
+    menuIcon: (0, _jquery2.default)(".site-header__menu-icon"),
+    siteHeader: (0, _jquery2.default)(".site-header")
 });
 
 //Reveal the feature sections when scrolled to
+/* eslint-disable no-unused-vars */
 var featureSection = new _Reveal2.default({
-     itemsToReveal: (0, _jquery2.default)(".feature-item"),
-     offsetPercent: "35%"
+    itemsToReveal: (0, _jquery2.default)(".feature-item"),
+    offsetPercent: "35%"
 });
 
-//Reveal testimonual section when scrolled tp;
+//Reveal testimonial section when scrolled tp;
 var testimonialSection = new _Reveal2.default({
-     itemsToReveal: (0, _jquery2.default)(".testimonial"),
-     offsetPercent: "50%"
+    itemsToReveal: (0, _jquery2.default)(".testimonial"),
+    offsetPercent: "50%"
 });
 
+//This change the color header on scroll and create a scroll spy
 var siteHeader = new _StickyHeader2.default({
-     siteHeader: (0, _jquery2.default)(".site-header"),
-     triggerElement: (0, _jquery2.default)(".large-hero__title"),
-     pageSections: (0, _jquery2.default)(".page-section"),
-     headerLinks: (0, _jquery2.default)(".primary-nav a")
+    siteHeader: (0, _jquery2.default)(".site-header"),
+    triggerElement: (0, _jquery2.default)(".large-hero__title"),
+    pageSections: (0, _jquery2.default)(".page-section"),
+    headerLinks: (0, _jquery2.default)(".primary-nav a")
+});
+
+//This open and close the modal
+var modal = new _Modal2.default({
+    closeModalBtn: (0, _jquery2.default)(".modal__close"),
+    openModalBtn: (0, _jquery2.default)(".open__modal"),
+    pageBody: (0, _jquery2.default)(document),
+    modal: (0, _jquery2.default)(".modal")
 });
 
 /***/ }),
@@ -11712,6 +11726,73 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 }));
 
 
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Modal = function () {
+  function Modal(options) {
+    _classCallCheck(this, Modal);
+
+    this.openModalBtn = options.openModalBtn;
+    this.pageBody = options.pageBody;
+    this.modal = options.modal;
+    this.closeModalBtn = options.closeModalBtn;
+
+    if (this.modal) this.modalEvents();
+  }
+
+  _createClass(Modal, [{
+    key: "modalEvents",
+    value: function modalEvents() {
+      var _this = this;
+
+      this.pageBody.keyup(this.keypressHandler.bind(this));
+      this.closeModalBtn.on("click", function (close) {
+        return _this.closeModal(close);
+      });
+      this.openModalBtn.on("click", this.openModal.bind(this));
+    }
+  }, {
+    key: "openModal",
+    value: function openModal() {
+      this.modal.addClass("modal--is-visible");
+      return false;
+    }
+  }, {
+    key: "closeModal",
+    value: function closeModal() {
+      this.modal.removeClass("modal--is-visible");
+    }
+  }, {
+    key: "keypressHandler",
+    value: function keypressHandler(e) {
+      if (e.which === 27) this.closeModal();
+    }
+  }]);
+
+  return Modal;
+}();
+
+exports.default = Modal;
 
 /***/ })
 /******/ ]);
